@@ -1,0 +1,237 @@
+/* ────── RESET ────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ────── BASE STYLES ────── */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ────── HEADER ────── */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 100px;
+}
+
+.logo span { color: red; }
+
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .search {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* ────── HERO ────── */
+.hero {
+  height: 100vh;
+  background: url('/img/me4.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  max-width: 600px;
+  padding: 50px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+}
+
+.hero h2   { color: #f99;    font-size: 48px; }
+.hero h1   { color: #fbc97f; font-size: 64px; font-weight: bold; }
+.hero p    { margin: 20px 0; line-height: 1.5; }
+
+.buttons { margin-top: 20px; }
+
+.buttons button {
+  background: none;
+  border: 2px solid #f99;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.buttons a { color: #ccc; text-decoration: underline; }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.left  { left: 20px; }
+.right { right: 20px; }
+
+/* ────── FILTER MENU ────── */
+.filter-menu {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.filter-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.filter-menu li {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.filter-menu .active { border-bottom: 2px solid red; }
+
+/* ────── INFO SECTION ────── */
+.info-section {
+  background: #111;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.info-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.info-block {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.info-block h2 {
+  margin-bottom: 15px;
+  color: #fbc97f;
+  font-size: 26px;
+  border-left: 5px solid #f99;
+  padding-left: 10px;
+}
+
+.info-block p,
+.info-block ul {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-left: 15px;
+}
+
+.info-block ul { list-style-type: disc; }
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  background: #f99;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* ────── MOBILE VIEW (≤768 px) ────── */
+@media screen and (max-width: 768px) {
+
+  /* Header */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .logo { font-size: 20px; margin-bottom: 10px; }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav a { margin: 5px 0; font-size: 14px; }
+
+  /* Hero */
+  .hero {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 10px;
+  }
+  .overlay {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .hero h2 { font-size: 32px; }
+  .hero h1 { font-size: 42px; }
+  .hero p  { font-size: 14px; }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .buttons button,
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .arrow {
+    font-size: 24px;
+    top: auto;
+    bottom: 10px;
+  }
+  .left  { left: 10px; }
+  .right { right: 10px; }
+
+  /* Filter Menu */
+  .filter-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .filter-menu li { font-size: 14px; padding: 8px; }
+
+  /* Info Section */
+  .info-block       { padding: 20px; }
+  .info-block h2    { font-size: 20px; }
+  .info-block p,
+  .info-block ul    { font-size: 14px; }
+
+  .skills-list      { flex-direction: column; }
+  .skills-list li   { width: fit-content; }
+}
